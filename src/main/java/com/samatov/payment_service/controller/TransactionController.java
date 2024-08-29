@@ -1,7 +1,6 @@
 package com.samatov.payment_service.controller;
 
 import com.samatov.payment_service.dto.TransactionDto;
-import com.samatov.payment_service.enums.TransactionStatus;
 import com.samatov.payment_service.service.TransactionService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;

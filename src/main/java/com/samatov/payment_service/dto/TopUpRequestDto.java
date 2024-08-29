@@ -3,9 +3,9 @@ package com.samatov.payment_service.dto;
 import com.samatov.payment_service.enums.Currency;
 import com.samatov.payment_service.enums.Language;
 import com.samatov.payment_service.enums.PaymentMethod;
-import com.samatov.payment_service.enums.TransactionType;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
+
 import java.math.BigDecimal;
 
 @Data
