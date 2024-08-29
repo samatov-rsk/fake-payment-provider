@@ -1,8 +1,6 @@
 package com.samatov.payment_service.handler;
 
-import com.samatov.payment_service.exception.InsufficientFundsException;
-import com.samatov.payment_service.exception.InvalidCardException;
-import com.samatov.payment_service.exception.TransactionNotFoundException;
+import com.samatov.payment_service.exception.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +14,36 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(InvalidCardException.class)
     public ResponseEntity<String> handleInvalidCardException(InvalidCardException ex) {
         log.error("Invalid card exception", ex);
+        return ResponseEntity.badRequest().body(ex.getMessage());
+    }
+
+    @ExceptionHandler(MerchantNotFoundException.class)
+    public ResponseEntity<String> handleMerchantNotFoundException(MerchantNotFoundException ex) {
+        log.error("Merchant not found exception", ex);
+        return ResponseEntity.badRequest().body(ex.getMessage());
+    }
+
+    @ExceptionHandler(UserNotFoundException.class)
+    public ResponseEntity<String> UserNotFoundException(UserNotFoundException ex) {
+        log.error("User not found exception", ex);
+        return ResponseEntity.badRequest().body(ex.getMessage());
+    }
+
+    @ExceptionHandler(AccountNotFoundException.class)
+    public ResponseEntity<String> handleAccountNotFoundException(AccountNotFoundException ex) {
+        log.error("Account not found exception", ex);
+        return ResponseEntity.badRequest().body(ex.getMessage());
+    }
+
+    @ExceptionHandler(CardNotFoundException.class)
+    public ResponseEntity<String> handleCardNotFoundException(CardNotFoundException ex) {
+        log.error("Card not found exception", ex);
+        return ResponseEntity.badRequest().body(ex.getMessage());
+    }
+
+    @ExceptionHandler(CustomerNotFoundException.class)
+    public ResponseEntity<String> handleCustomerNotFoundException(CustomerNotFoundException ex) {
+        log.error("Customer not found exception", ex);
         return ResponseEntity.badRequest().body(ex.getMessage());
     }
 
