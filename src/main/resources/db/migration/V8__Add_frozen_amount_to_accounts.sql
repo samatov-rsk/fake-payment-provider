@@ -1,0 +1,2 @@
+ALTER TABLE accounts
+    ADD COLUMN frozen_amount DECIMAL(19, 4) NOT NULL DEFAULT 0;

@@ -1,0 +1,30 @@
+server:
+  port: 8080
+  reactive:
+    type: netty
+
+spring:
+  r2dbc:
+    url: r2dbc:pool:postgresql://localhost:5432/fakedb
+    username: user
+    password: password
+  flyway:
+    url: jdbc:postgresql://localhost:5432/fakedb
+    user: user
+    password: password
+    locations: classpath:db/migration
+    enabled: true
+    baseline-on-migrate: true
+    validate-on-migrate: true
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.springframework.web.reactive: DEBUG
+    org.springframework.http: DEBUG
